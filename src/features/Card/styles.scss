@@ -1,0 +1,58 @@
+.card {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .header {
+        width: 100%;
+        background-color: blue;
+    }
+    
+    .footer {
+        width: 100%;
+        background-color: blue;
+    }
+    
+    .container {
+        width: 100%;
+        display: flex;
+        
+        .left {
+            width: 10%;
+            background-color: grey;
+        }
+
+        .right {
+            width: 10%;
+            background-color: grey;
+        }
+
+        .grid {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            background-color: green;
+    
+            .bingo {
+                display: flex;
+                background-color: yellow;
+
+                > div {
+                    width: 20%;
+                }
+            }
+            
+            .row {
+                width: 100%;
+                display: flex;
+                background-color: red;
+    
+                .column {
+                    width: 20%;
+                    background-color: brown;;
+                }
+            }
+        }
+    }
+}

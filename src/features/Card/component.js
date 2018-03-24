@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styles from './styles.css'
+import styles from './styles.scss'
 
 const CardRow = ({ numbers }) => {
     const cols = numbers.map(number => <div key={number} className={styles.column}>{number}</div>)
@@ -21,13 +21,17 @@ const Card = () => {
     return (
         <div className={styles.card}>
             <div className={styles.header}>This is a card header</div>
-            <div className={styles.grid}>
-                <div className={styles.bingo}><div>B</div><div>I</div><div>N</div><div>G</div><div>O</div></div>
-                <CardRow numbers={card[0]} />
-                <CardRow numbers={card[1]} />
-                <CardRow numbers={card[2]} />
-                <CardRow numbers={card[3]} />
-                <CardRow numbers={card[4]} />
+            <div className={styles.container}>
+                <div className={styles.left}>Left side</div>
+                <div className={styles.grid}>
+                    <div className={styles.bingo}><div>B</div><div>I</div><div>N</div><div>G</div><div>O</div></div>
+                    <CardRow numbers={card[0]} />
+                    <CardRow numbers={card[1]} />
+                    <CardRow numbers={card[2]} />
+                    <CardRow numbers={card[3]} />
+                    <CardRow numbers={card[4]} />
+                </div>
+                <div className={styles.right}>Right side</div>
             </div>
             <div className={styles.footer}>This is a card footer</div>
         </div>

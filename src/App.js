@@ -14,7 +14,9 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
-        <Card />
+        <div style={{ width: '50%', margin: '0 auto' }}>
+          <Card />
+        </div>
       </div>
     );
   }
