@@ -1,0 +1,28 @@
+.card {
+    display: flex;
+    align-items: center;
+}
+
+.header {
+    background-color: blue;
+}
+
+.footer {
+    background-color: blue;
+}
+
+.grid {
+    background-color: green;
+}
+
+.bingo {
+    background-color: yellow;
+}
+
+.row {
+    background-color: red;
+}
+
+.col {
+    background-color: brown;;
+}
