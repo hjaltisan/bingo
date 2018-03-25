@@ -3,8 +3,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.scss'
 
+const CardNumber = ({ number }) => {
+    return <div className={styles.column}><div className={styles.square}>{number}</div></div>
+}
+
 const CardRow = ({ numbers }) => {
-    const cols = numbers.map(number => <div key={number} className={styles.column}>{number}</div>)
+    const cols = numbers.map(number => <CardNumber key={number} number={number} />)
     return (
         <div className={styles.row}>
             {cols}
