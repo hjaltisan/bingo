@@ -1,3 +1,4 @@
+import _ from 'lodash'
 import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.scss'
@@ -17,6 +18,8 @@ CardRow.propTypes = {
 
 const Card = () => {
     const card = [[15,6,4,13,9],[17,28,21,30,23],[45,41,0,35,38],[60,50,54,51,57],[75,65,73,69,74]]
+    const zipped = _.zip(...card)
+    console.log('zipped: ', zipped)
     // todo: fix the numbers input into cardRow, it should be a row, not a column...
     return (
         <div className={styles.card}>
@@ -25,11 +28,11 @@ const Card = () => {
                 <div className={styles.left}>Left side</div>
                 <div className={styles.grid}>
                     <div className={styles.bingo}><div>B</div><div>I</div><div>N</div><div>G</div><div>O</div></div>
-                    <CardRow numbers={card[0]} />
-                    <CardRow numbers={card[1]} />
-                    <CardRow numbers={card[2]} />
-                    <CardRow numbers={card[3]} />
-                    <CardRow numbers={card[4]} />
+                    <CardRow numbers={zipped[0]} />
+                    <CardRow numbers={zipped[1]} />
+                    <CardRow numbers={zipped[2]} />
+                    <CardRow numbers={zipped[3]} />
+                    <CardRow numbers={zipped[4]} />
                 </div>
                 <div className={styles.right}>Right side</div>
             </div>
