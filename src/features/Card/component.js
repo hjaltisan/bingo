@@ -3,9 +3,44 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.scss'
 
-const CardNumber = ({ number }) => {
-    return <div className={styles.column}><div className={styles.square}>{number}</div></div>
+class CardNumber extends React.Component {
+    constructor(props) {
+        super(props)
+
+        this.state = { open: true }
+    }
+
+    render() {
+        let className = styles.curtain
+        if (!this.state.open) {
+            className = `${className} ${styles.closed}`
+        }
+        const number = this.props.number === 0 ? 'FREE' : this.props.number
+        return (
+                <div className={styles.square} onClick={() => { this.setState({ open: !this.state.open }) }}>
+                    <div className={className} />
+                    <div>{number}</div>
+                </div>
+        ) 
+    }
 }
+
+CardNumber.propTypes = {
+    number: PropTypes.number.isRequired,
+}
+
+// const CardNumber = ({ number }) => {
+//     return (
+//         <div className={styles.column}>
+//             <div className={styles.square}>
+//                 <div>
+//                     <div className={styles.curtain} onClick={() => } />
+//                     <div>{number}</div>
+//                 </div>
+//             </div>
+//         </div>
+//     )
+// }
 
 const CardRow = ({ numbers }) => {
     const cols = numbers.map(number => <CardNumber key={number} number={number} />)
@@ -32,11 +67,13 @@ const Card = () => {
                 <div className={styles.left}>Left side</div>
                 <div className={styles.grid}>
                     <div className={styles.bingo}><div>B</div><div>I</div><div>N</div><div>G</div><div>O</div></div>
-                    <CardRow numbers={zipped[0]} />
-                    <CardRow numbers={zipped[1]} />
-                    <CardRow numbers={zipped[2]} />
-                    <CardRow numbers={zipped[3]} />
-                    <CardRow numbers={zipped[4]} />
+                    <div className={styles.bingoNumbers}>
+                        <CardRow numbers={zipped[0]} />
+                        <CardRow numbers={zipped[1]} />
+                        <CardRow numbers={zipped[2]} />
+                        <CardRow numbers={zipped[3]} />
+                        <CardRow numbers={zipped[4]} />
+                    </div>
                 </div>
                 <div className={styles.right}>Right side</div>
             </div>
