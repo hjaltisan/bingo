@@ -10,12 +10,14 @@ $card-row-height: calc(calc(#{$card-width} - #{$card-side-width} - #{$card-side-
 
     .header {
         width: 100%;
-        background-color: blue;
+        height: $card-side-width;
+        background-color: grey;
     }
     
     .footer {
         width: 100%;
-        background-color: blue;
+        height: $card-side-width;
+        background-color: grey;
     }
     
     .container {
@@ -41,6 +43,8 @@ $card-row-height: calc(calc(#{$card-width} - #{$card-side-width} - #{$card-side-
             .bingo {
                 display: flex;
                 background-color: yellow;
+                height: 35px;
+                align-items: center;
 
                 > div {
                     width: 20%;

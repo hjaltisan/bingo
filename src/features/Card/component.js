@@ -62,9 +62,9 @@ const Card = () => {
     // todo: fix the numbers input into cardRow, it should be a row, not a column...
     return (
         <div className={styles.card}>
-            <div className={styles.header}>This is a card header</div>
+            <div className={styles.header} />
             <div className={styles.container}>
-                <div className={styles.left}>Left side</div>
+                <div className={styles.left} />
                 <div className={styles.grid}>
                     <div className={styles.bingo}><div>B</div><div>I</div><div>N</div><div>G</div><div>O</div></div>
                     <div className={styles.bingoNumbers}>
@@ -75,9 +75,9 @@ const Card = () => {
                         <CardRow numbers={zipped[4]} />
                     </div>
                 </div>
-                <div className={styles.right}>Right side</div>
+                <div className={styles.right} />
             </div>
-            <div className={styles.footer}>This is a card footer</div>
+            <div className={styles.footer} />
         </div>
     )
 }
