@@ -1,0 +1,18 @@
+language: node_js
+node_js:
+- '8'
+cache:
+  directories:
+  - node_modules
+script:
+- yarn build
+deploy:
+  provider: s3
+  skip_cleanup: true
+  local_dir: build
+  access_key_id: $S3_KEY_ID
+  secret_access_key:
+    secure: coSRYhEjKfFjP0NWmT14vIdR6GuLzzlGZT4zDsQh/69C47zvdI7ltA8hfsvnQYgP5ZmX2qhQmsNiUaYIU8X8zL4fvi7Pfj8loexGE4UVxptBA84xi+7qOsxtY3RNbclq3FOY2UPihXEXh8tdi4a3K2HwPE970ax8SGBdN1ZQ0xRq5OLMKTB7uXK/je8z+0/isd06B+AsNvc1L3RLi0TtYT65THSLesm4Ok0av/DMXY7tVzl+5G03jJG3a8RGxUCfH405GMcJ4fq+otRhD0Sz35wpRT+WxVv9TAt3bWf9sLV7slqWe97PThJtHrBLl+vMKxPBv9dsT8tlSJxWIWB09gjH+i70PRhHJFRWWuu3uSJfPQIyhgucvaYwN232S4sM5s7Gyz0Y6iT6+AwpA6SocqqwxRome+jEVmu+tVaqsHK9t0kSZ8k0tK6qI4SDOB8zKsZVMdSuN+jnDh7A+orpoIloePTyzWUuyGoBCu589lXMjcDtgMO/aZ3LjwqrSoNTtBvzR3/I/47DlnFGGbZgjeFmHaPSMgSRehXWNd6GaevkVpYoXk/GrCv5LXTvha+J5rXHVYK2gPnmwAYjQGcgtQ/xWeE7tU2fWunR/GbX06eFT1zjf7oLCXa3KWk0/2Xya/bFtA34bwGKuTEiMypeDPencD8zo67bHL5i7/FDx6o=
+  bucket: bingo.kolbeinsson.se
+  region: eu-west-1
+  acl: public_read
